@@ -2,7 +2,7 @@ public class FlightNavPath {
   let controller: ref<FlightController>;
 
   public let mmcc: ref<MinimapContainerController>;
-  let spacing: Float;
+  let spacing: Float = 2.5; // meters
   let distanceToPath: Float;
   let closestPoint: Float;
   let interpolationDistance: Float;
@@ -28,7 +28,7 @@ public class FlightNavPath {
   public static func Create(controller: ref<FlightController>) -> ref<FlightNavPath> {
     let self = new FlightNavPath();
     self.controller = controller;
-    self.spacing = 2.5; // meters
+    // self.spacing = 2.5; // meters
     self.distanceToPath = 50.0; // meters
     self.closestPoint = 1.0; // meters
     self.interpolationDistance = 50.0; // meters
@@ -106,7 +106,7 @@ public class FlightNavPath {
     let lastFxPoint: Vector4 = points[0];
     let pointsDrawn = 0;
 
-    ArrayRemove(points, points[0]);
+    // ArrayRemove(points, points[0]);
 
     for point in points {
       let tweenPointDistance = Vector4.Distance(point, lastPoint);
